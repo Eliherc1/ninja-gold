@@ -10,19 +10,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>NinjaGold</title>
+
     <style>
         body {
-            text-align: center;
+            
             background-color: deepskyblue;
             font-family: 'Source Code Pro', monospace;
             color: ghostwhite;
         }
-
+        
         .caja {
             background-color: darkcyan;
             padding: 8px;
+            text-align: center
         }
+        
+        div.caja-logs{
+            background: rgb(34,193,195);
+            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+            min-height: 200px;
+	        min-width: 200px;
+	        overflow-y: scroll;
+            border-radius: 5px;
+        }
+        .color-verde{
+            color: green ;
+        }
+
+        .color-rojo{
+            color:red ;
+        }
+
     </style>
+
 
 </head>
 
@@ -33,7 +53,7 @@
                 <h1>Ninja Gold</h1>
             </div>
             <div class="row mt-5">
-                <h4>Has Ganado: {{request.session.contador}} 🤑</h4>
+                <h4>Monedas Ganadas: {{request.session.contador}} 🤑🤑🤑</h4>
             </div>
             <div class="row mt-5">
                 <div class="col-3 border border-3 caja">
@@ -74,6 +94,14 @@
                 </div>
                 <div class="row mt-5">
                     <a href="/reset" class="btn btn-primary" type="button">Resetear</a>
+                </div>
+                <div class="caja-logs mt-5">
+                    <h3>Actividades</h3>
+                    <ul>
+                        {% for log in request.session.logs %}
+                        <li class="color-{{log.color}}">{{log.texto}}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>
