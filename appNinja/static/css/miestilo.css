@@ -1,1 +1,29 @@
 
+    body {
+            
+        background-color: deepskyblue;
+        font-family: 'Source Code Pro', monospace;
+        color: ghostwhite;
+    }
+    
+    .caja {
+        background-color: darkcyan;
+        padding: 8px;
+        text-align: center
+    }
+    
+    div.caja-logs{
+        background: rgb(34,193,195);
+        background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+        min-height: 200px;
+        min-width: 200px;
+        overflow-y: scroll;
+        border-radius: 5px;
+    }
+    .color-verde{
+        color: green ;
+    }
+
+    .color-rojo{
+        color:red ;
+    }
